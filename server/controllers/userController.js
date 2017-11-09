@@ -47,7 +47,3 @@ module.exports = {
   register,
   login
 };
-
-
-
-}

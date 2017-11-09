@@ -32,8 +32,8 @@ const user = require('./routes/user')
 const article = require('./routes/article')
 
 app.use('/', index);
-app.use('/user', users);
-app.use('/article', users);
+app.use('/user', user);
+app.use('/article', article);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
