@@ -1,12 +1,10 @@
-"use strict";
-
-const crypto = require("crypto");
-const jwt = require("jsonwebtoken");
+const crypto = require('crypto')
+const jwt = require('jsonwebtoken')
 
 function randomKey() {
-  var chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var length = 8;
-  var result = "";
+  var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  var length = 8
+  var result = '';
 
   for (var i = length; i > 0; --i)
     result += chars[Math.round(Math.random() * (chars.length - 1))];
@@ -16,9 +14,9 @@ function randomKey() {
 
 function hash(data, key) {
   const hash = crypto
-    .createHmac("sha256", key)
+    .createHmac('sha256', key)
     .update(data)
-    .digest("hex");
+    .digest('hex');
   return hash;
 }
 
@@ -27,7 +25,7 @@ function auth(req, res, next) {
   if (token) {
     next();
   } else {
-    res.send(" Please login Before");
+    res.send('anda belum login');
   }
 }
 

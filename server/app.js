@@ -10,7 +10,8 @@ mongoose.connect('mongodb://localhost/hacktivpress-rizqjoe1')
 const cors = require('cors')
 
 var index = require('./routes/index');
-// var users = require('./routes/users');
+var users = require('./routes/users');
+
 var app = express();
 
 // view engine setup
@@ -27,13 +28,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors())
 
-// require user and article 
 const user = require('./routes/user')
 const article = require('./routes/article')
 
 app.use('/', index);
-app.use('/user', user);
-app.use('/article', article);
+app.use('/users', users);
+app.use('/user', user)
+app.use('/article', article)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
